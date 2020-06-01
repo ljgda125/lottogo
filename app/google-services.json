@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "332719365277",
+    "firebase_url": "https://lottogo-7e43c.firebaseio.com",
+    "project_id": "lottogo-7e43c",
+    "storage_bucket": "lottogo-7e43c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:332719365277:android:1702e6a5e79fa3f6744874",
+        "android_client_info": {
+          "package_name": "com.example.lottogo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "332719365277-6p2sslpjj482vehbgbimt44edbn1h4l6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCg3SUxh7m0QBY7dD_ytKPFkfqpiaRoyvo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "332719365277-6p2sslpjj482vehbgbimt44edbn1h4l6.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "332719365277-vh9u7l01cmbrr2uos973d9l00v7mcfm6.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.lottogo"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
