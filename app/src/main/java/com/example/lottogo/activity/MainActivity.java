@@ -43,7 +43,6 @@ public class MainActivity extends BasicActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
 
         if (firebaseUser == null) {
@@ -170,4 +169,5 @@ public class MainActivity extends BasicActivity {
         intent.putExtra("id",id);
         startActivity(intent);
     }
+
 }

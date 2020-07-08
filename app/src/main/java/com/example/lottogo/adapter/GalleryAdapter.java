@@ -47,7 +47,7 @@ public class GalleryAdapter  extends RecyclerView.Adapter<GalleryAdapter.Gallery
                 activity.finish();
             }
         });
-//
+
         return galleryViewHolder;
     }
 
