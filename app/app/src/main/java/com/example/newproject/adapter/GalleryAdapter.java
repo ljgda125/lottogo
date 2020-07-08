@@ -1,4 +1,4 @@
-package com.example.lottogo.adapter;
+package com.example.newproject.adapter;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -12,7 +12,7 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.example.lottogo.R;
+import com.example.newproject.R;
 
 import java.util.ArrayList;
 
@@ -20,9 +20,9 @@ public class GalleryAdapter  extends RecyclerView.Adapter<GalleryAdapter.Gallery
     private ArrayList<String> mDataset;
     private Activity activity;
 
-    static class GalleryViewHolder extends RecyclerView.ViewHolder {
-        CardView cardView;
-        GalleryViewHolder(CardView v) {
+    public static class GalleryViewHolder extends RecyclerView.ViewHolder {
+        public CardView cardView;
+        public GalleryViewHolder(CardView v) {
             super(v);
             cardView = v;
         }

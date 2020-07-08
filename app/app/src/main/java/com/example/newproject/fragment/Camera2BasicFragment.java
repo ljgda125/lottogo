@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.lottogo.fragment;
+package com.example.newproject.fragment;
 
 import android.Manifest;
 import android.app.Activity;
@@ -23,6 +23,7 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.pm.PackageManager;
+import android.content.res.Configuration;
 import android.graphics.ImageFormat;
 import android.graphics.Matrix;
 import android.graphics.Point;
@@ -59,7 +60,8 @@ import androidx.core.content.ContextCompat;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 
-import com.example.lottogo.R;
+import com.example.newproject.R;
+import com.example.newproject.view.AutoFitTextureView;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -166,7 +168,7 @@ public class Camera2BasicFragment extends Fragment
     /**
      * An {@link AutoFitTextureView} for camera preview.
      */
-
+    private AutoFitTextureView mTextureView;
 
     /**
      * A {@link CameraCaptureSession } for camera preview.
@@ -179,7 +181,7 @@ public class Camera2BasicFragment extends Fragment
     private CameraDevice mCameraDevice;
 
     /**
-     * The {@link Size} of camera preview.
+     * The {@link android.util.Size} of camera preview.
      */
     private Size mPreviewSize;
 
@@ -263,8 +265,6 @@ public class Camera2BasicFragment extends Fragment
     */
 
     private ImageReader.OnImageAvailableListener mOnImageAvailableListener;
-    private TextureView mTextureView;
-
     public void setOnImageAvailableListener(ImageReader.OnImageAvailableListener mOnImageAvailableListener) {
         this.mOnImageAvailableListener = mOnImageAvailableListener;
     }
@@ -449,6 +449,7 @@ public class Camera2BasicFragment extends Fragment
     public void onViewCreated(final View view, Bundle savedInstanceState) {
         view.findViewById(R.id.picture).setOnClickListener(this);
         view.findViewById(R.id.change).setOnClickListener(this);
+        mTextureView = (AutoFitTextureView) view.findViewById(R.id.texture);
     }
 
     @Override
@@ -457,7 +458,21 @@ public class Camera2BasicFragment extends Fragment
         mFile = new File(getActivity().getExternalFilesDir(null), "pic.jpg");
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        startBackgroundThread();
 
+        // When the screen is turned off and turned back on, the SurfaceTexture is already
+        // available, and "onSurfaceTextureAvailable" will not be called. In that case, we can open
+        // a camera and start preview from here (otherwise, we wait until the surface is ready in
+        // the SurfaceTextureListener).
+        if (mTextureView.isAvailable()) {
+            openCamera(mTextureView.getWidth(), mTextureView.getHeight());
+        } else {
+            mTextureView.setSurfaceTextureListener(mSurfaceTextureListener);
+        }
+    }
 
     @Override
     public void onPause() {
@@ -583,6 +598,13 @@ public class Camera2BasicFragment extends Fragment
 
                     // We fit the aspect ratio of TextureView to the size of preview we picked.
                     int orientation = getResources().getConfiguration().orientation;
+                    if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                        mTextureView.setAspectRatio(
+                                mPreviewSize.getWidth(), mPreviewSize.getHeight());
+                    } else {
+                        mTextureView.setAspectRatio(
+                                mPreviewSize.getHeight(), mPreviewSize.getWidth());
+                    }
 
                     // Check if the flash is supported.
                     Boolean available = characteristics.get(CameraCharacteristics.FLASH_INFO_AVAILABLE);
@@ -736,7 +758,7 @@ public class Camera2BasicFragment extends Fragment
     }
 
     /**
-     * Configures the necessary {@link Matrix} transformation to `mTextureView`.
+     * Configures the necessary {@link android.graphics.Matrix} transformation to `mTextureView`.
      * This method should be called after the camera preview size is determined in
      * setUpCameraOutputs and also the size of `mTextureView` is fixed.
      *

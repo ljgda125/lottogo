@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.lottogo.view;
+package com.example.newproject.view;
 
 import android.content.Context;
 import android.util.AttributeSet;

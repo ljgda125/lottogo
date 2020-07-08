@@ -1,42 +1,93 @@
 {
   "project_info": {
-    "project_number": "332719365277",
-    "firebase_url": "https://lottogo-7e43c.firebaseio.com",
-    "project_id": "lottogo-7e43c",
-    "storage_bucket": "lottogo-7e43c.appspot.com"
+    "project_number": "290421239939",
+    "firebase_url": "https://new-project-d792e.firebaseio.com",
+    "project_id": "new-project-d792e",
+    "storage_bucket": "new-project-d792e.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:332719365277:android:1702e6a5e79fa3f6744874",
+        "mobilesdk_app_id": "1:290421239939:android:0723ae2825773b6c64abb6",
         "android_client_info": {
           "package_name": "com.example.lottogo"
         }
       },
       "oauth_client": [
         {
-          "client_id": "332719365277-6p2sslpjj482vehbgbimt44edbn1h4l6.apps.googleusercontent.com",
+          "client_id": "290421239939-qd5ghnjh4p0rngc0ksh9002fvpddj6k9.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCg3SUxh7m0QBY7dD_ytKPFkfqpiaRoyvo"
+          "current_key": "AIzaSyCix3uYS8ZO94YVQI1wCwpi45F0r5qloIk"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "332719365277-6p2sslpjj482vehbgbimt44edbn1h4l6.apps.googleusercontent.com",
+              "client_id": "290421239939-qd5ghnjh4p0rngc0ksh9002fvpddj6k9.apps.googleusercontent.com",
               "client_type": 3
-            },
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:290421239939:android:acd552a1ec2c84de64abb6",
+        "android_client_info": {
+          "package_name": "com.example.lottogo.activity"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "290421239939-qd5ghnjh4p0rngc0ksh9002fvpddj6k9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCix3uYS8ZO94YVQI1wCwpi45F0r5qloIk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
             {
-              "client_id": "332719365277-vh9u7l01cmbrr2uos973d9l00v7mcfm6.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.example.lottogo"
-              }
+              "client_id": "290421239939-qd5ghnjh4p0rngc0ksh9002fvpddj6k9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:290421239939:android:9e59946fde5c7c2264abb6",
+        "android_client_info": {
+          "package_name": "com.example.newproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "290421239939-qd5ghnjh4p0rngc0ksh9002fvpddj6k9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCix3uYS8ZO94YVQI1wCwpi45F0r5qloIk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "290421239939-qd5ghnjh4p0rngc0ksh9002fvpddj6k9.apps.googleusercontent.com",
+              "client_type": 3
             }
           ]
         }
