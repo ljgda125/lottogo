@@ -41,6 +41,7 @@ public class LoginActivity extends BasicActivity {
 
         findViewById(R.id.loginButton).setOnClickListener(onClickListener);
         findViewById(R.id.gotoPasswordResetButton).setOnClickListener(onClickListener);
+        findViewById(R.id.signup1btn).setOnClickListener(onClickListener);
 
         ///////////////////
         mCallbackManager = CallbackManager.Factory.create();
@@ -58,6 +59,8 @@ public class LoginActivity extends BasicActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         mCallbackManager.onActivityResult(requestCode, resultCode, data);
         super.onActivityResult(requestCode, resultCode, data);
+        //여기에다가 페이지 이동 코드를 넣어주면 됩니다.
+        myStartActivity(MainActivity.class);
     }
 /////////////////////////
 
@@ -71,6 +74,9 @@ public class LoginActivity extends BasicActivity {
                     break;
                 case R.id.gotoPasswordResetButton:
                     myStartActivity(PasswordResetActivity.class);
+                    break;
+                case R.id.signup1btn:
+                    myStartActivity(SignUpActivity.class);
                     break;
             }
         }
@@ -91,7 +97,7 @@ public class LoginActivity extends BasicActivity {
                             if (task.isSuccessful()) {
                                 FirebaseUser user = mAuth.getCurrentUser();
                                 startToast("로그인에 성공하였습니다.");
-                                myStartActivity(MainActivity.class);
+                                myStartActivity(FirstActivity.class);
                             } else {
                                 if (task.getException() != null) {
                                     startToast(task.getException().toString());

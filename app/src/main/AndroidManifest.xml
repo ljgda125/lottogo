@@ -4,7 +4,6 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
 
@@ -15,7 +14,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.MainActivity">
+        <activity android:name=".activity.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -33,7 +32,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".activity.LoginActivity">
+        <activity android:name=".activity.MainActivity">
         </activity>
         <activity android:name=".activity.SignUpActivity">
         </activity>
@@ -48,6 +47,8 @@
         <activity android:name=".activity.BasicActivity">
         </activity>
         <activity android:name=".activity.WritePostActivity">
+        </activity>
+        <activity android:name=".activity.FirstActivity">
         </activity>
 
         <!-- 페이스북-->

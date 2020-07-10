@@ -28,7 +28,10 @@ public class SignUpActivity extends BasicActivity {
         mAuth = FirebaseAuth.getInstance();
 
         findViewById(R.id.signUpButton).setOnClickListener(onClickListener);
-        findViewById(R.id.gotoLoginButton).setOnClickListener(onClickListener);
+
+
+        //회원가입탭에서 회원가입 버튼 있을 시
+        //findViewById(R.id.gotoLoginButton).setOnClickListener(onClickListener);
     }
 
     @Override
@@ -46,9 +49,11 @@ public class SignUpActivity extends BasicActivity {
                 case R.id.signUpButton:
                     signUp();
                     break;
-                case R.id.gotoLoginButton:
-                    myStartActivity(LoginActivity.class);
-                    break;
+
+                    //회원가입탭에서 회원가입 버튼 있을 시
+                //case R.id.gotoLoginButton:
+                   // myStartActivity(LoginActivity.class);
+                    //break;
             }
         }
     };
@@ -70,7 +75,7 @@ public class SignUpActivity extends BasicActivity {
                                 if (task.isSuccessful()) {
                                     FirebaseUser user = mAuth.getCurrentUser();
                                     startToast("회원가입에 성공하였습니다.");
-                                    myStartActivity(MainActivity.class);
+                                    myStartActivity(FirstActivity.class);
                                 } else {
                                     if(task.getException() != null){
                                         startToast(task.getException().toString());

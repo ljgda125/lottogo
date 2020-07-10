@@ -3,4 +3,6 @@
     <color name="colorPrimary">#6200EE</color>
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
+    <color name="maincolor">#ffffcc</color>
+    <color name="Editcolor">#663300</color>
 </resources>
